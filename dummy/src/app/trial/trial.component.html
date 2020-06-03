@@ -1,0 +1,31 @@
+<h1>{{title}}</h1>
+
+<button (click)= "onClick()" [ngStyle]="{background: 'red'}" > Click Button</button>
+   {{length}}
+<p>Items are as following :</p>
+
+  <div *ngFor="let item of items ; index as i" [ngStyle] = "{'background-color' : [i] % 2 == 0? 'green' : 'blue'}">
+    {{ item }}
+  </div>
+  <br><br><br>
+  <div *ngIf = "bestItem ; else elseBlock " >
+      Display Content when condition is true
+  </div>
+
+  <ng-template #elseBlock>
+      Display Content when condition is false
+  </ng-template>
+  <br><br><br>
+  
+  <br><br><br>
+
+<div [ngSwitch] = "topic" >
+    <div *ngSwitchCase = "'Economy'" > Economy news chosen</div>
+    <div *ngSwitchCase = "'Technology'" > Technology news chosen</div>
+    <div *ngSwitchCase = "'Pyschology'" > Pyschology news chosen</div>
+    <div *ngSwitchCase = "'Philosphy'" >  Philosphy news chosen</div>
+</div>
+<br><br><br>
+<input [disabled]= "true" [id] = "number" type = "text" value = "Text" >
+
+

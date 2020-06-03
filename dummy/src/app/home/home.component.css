@@ -1,0 +1,11 @@
+.button
+{
+    background-color: burlywood;
+}
+mat-grid-tile {
+    background: lightblue;
+    size: 0.01px;
+  }
+  .strikethrough {
+    text-decoration: line-through;
+}

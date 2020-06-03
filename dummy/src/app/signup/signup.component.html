@@ -1,0 +1,45 @@
+
+    <h2>New User? Signup!</h2>
+    <br><br>
+     <form [formGroup]="signupForm" (ngSubmit)="submitForm()" class = "form">
+         <div>
+        
+            <label for="">Name</label>
+             <input formControlName="displayName" type="text">
+             <span class = "alert-danger" *ngIf= "signupForm.get('displayName').hasError('required') && signupForm.get('displayName').touched">
+                 Name is required!
+             </span>
+
+         </div><br>
+         <div>
+            <label for="">Email</label>
+            <input formControlName="userName" type="email">
+            <span class=" alert-danger" *ngIf="signupForm.get('userName').hasError('required')&& signupForm.get('userName').touched">
+              Email is required! 
+            </span>
+        </div><br>
+        <div>
+        
+            <label>Password</label>
+            <input formControlName="password" type="password">
+            
+            <span class=" alert-danger" *ngIf="signupForm.get('password').hasError('required')&& signupForm.get('password').touched">
+              Password is required!  
+            </span> 
+        </div>
+        <br>
+
+
+            Role :<label class="radio-inline">
+            <input type="radio" formControlName="role" value="Seller">Seller</label>
+            <label class="radio-inline">
+            <input type="radio" formControlName="role" value="Buyer">Buyer</label>
+
+            <span class = "alert-danger"  *ngIf="signupForm.get('role').hasError('required') && signupForm.get('password').touched">
+                Role is required!
+            </span>
+        <br> <br>
+        <button [disabled]='signupForm.invalid' class="btn-register" type="submit">Register</button>
+        
+    </form>
+   

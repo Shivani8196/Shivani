@@ -1,0 +1,63 @@
+
+<div class="container">
+    <form [formGroup]="AddItemForm" (ngSubmit)="AddItem()">
+        <div class="form-group">
+            <label for="name">Product Name:</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Product Name">
+            <div class="alert alert-danger" *ngIf="AddItemForm.get('name').hasError('required')&& AddItemForm.get('name').touched">
+                *Product Name Required
+             </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="category">Category:     </label>
+            <select formControlName="category" class="form-control" placeholder="category">
+                <option  *ngFor="let category of categoryList" [value]="category._id">{{category.name}}</option>
+                </select>
+            <div class="alert alert-danger" *ngIf="AddItemForm.get('category').hasError('required')&& AddItemForm.get('category').touched">
+                    *Category required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Description">Description:  </label>
+            <textarea formControlName="description" class="form-control" placeholder="Description"></textarea>
+            <div class="alert alert-danger" *ngIf="AddItemForm.get('description').hasError('required')&& AddItemForm.get('description').touched">
+                *Description required
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="MRP">MRP : </label>
+            <input type="number" formControlName="mrp" class="form-control" placeholder="MRP">
+            <div class="alert alert-danger" *ngIf="AddItemForm.get('mrp').hasError('required')&& AddItemForm.get('mrp').touched">
+                *Displayname required
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="salePrice">Sale Price :</label>
+            <input type="number" formControlName="salePrice" class="form-control" placeholder="Sale Price">
+            <div class="alert alert-danger" *ngIf="AddItemForm.get('salePrice').hasError('required')&& AddItemForm.get('salePrice').touched">
+                *Sale Price required
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity :</label>
+            <input type="number" formControlName="quantity" class="form-control" placeholder="Quantity">
+            <div class="alert alert-danger" *ngIf="AddItemForm.get('quantity').hasError('required')&& AddItemForm.get('quantity').touched">
+                *Quantity required
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="onSale">On sale :</label>
+            <select formControlName="onSale" class="form-control" placeholder="On Sale">
+                <option [ngValue]= "false">No</option>
+                <option  [ngValue]="true">Yes</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="AddItemForm.get('onSale').hasError('required')&& AddItemForm.get('onSale').touched">
+                *On Sale required
+             </div>
+        </div>
+        <button class="btn btn-primary"  type="submit">Add</button>
+        <button class="btn btn-default" type="reset">Clear</button>
+    </form>
+    </div><br><br>
+    <button routerLink = "/seller" > Back to Dashboard!</button>

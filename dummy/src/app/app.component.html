@@ -1,0 +1,13 @@
+<mat-toolbar color= "primary" >
+    <span> WELCOME TO  SHOPPING APP!!  </span> 
+    <span class="example-fill-remaining-space"></span>
+
+<button mat-raised-button color = "primary" routerLink = "/signup-page" routerLinkActive = "active"   >SIGNUP</button>
+<button mat-raised-button color = "primary" routerLink = "/login-page" routerLinkActive = "active"  >LOGIN</button>
+ <div class="example-button-container">
+    <button mat-fab color="warn" aria-label="Example icon button with a home icon" routerLink='/home'>
+      <mat-icon>home</mat-icon>
+    </button>
+  </div> 
+</mat-toolbar>
+<router-outlet></router-outlet>
